@@ -17,6 +17,10 @@ export class PaymentDetailService {
     return this.http.post(this.baseURL, this.formData);
   }
 
+  putPaymentDetail() {
+    return this.http.put(`${this.baseURL}/${this.formData.paymentDetailId}`, this.formData);
+  }
+
   refreshlist() {
     this.http.get(this.baseURL).toPromise().then(res => this.list = res as PaymentDetail[]);
   }
